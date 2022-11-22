@@ -1,6 +1,6 @@
 class Group < ApplicationRecord
 
-  has_many :group_users
+  has_many :group_users, dependent: :destroy
   # userは、group_usersという中間テーブルを通じてgroupsにアクセスできるという記述
   has_many :users, through: :group_users
 

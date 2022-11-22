@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   resources :groups, except: [:destroy]
   resources :groups do
     get "join" => "groups#join"
+    resources :event_notices, only: [:new, :create]
+    get "event_notices" => "event_notices#sent"
   end
 end
